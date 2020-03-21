@@ -1,0 +1,153 @@
+// main colors
+$mainColor: #FFC400
+$bgColor: #1C1C1C
+// fonts
+$mainFont: Futura
+
+body
+    padding: 0px
+    margin: 0px
+    font-family: $mainFont
+    background-color: $bgColor
+    color: white
+    -webkit-font-smoothing: antialiased
+    
+h1
+    margin: 0px
+    padding: 0px
+p
+    font-size: 13px
+    color: #9B9B9B
+h1
+    &.display-text
+        text-transform: uppercase
+        letter-spacing: .6rem
+        font-size: 52px
+.display-pre
+    font-size: 1rem
+    letter-spacing: .3rem
+
+.display-text-2
+    font-size: 29px
+    letter-spacing: .3rem
+    text-transform: uppercase
+    margin: .2rem 0px
+.display-text-2-pre
+    text-transform: uppercase
+    font-size: 13px
+    padding: 0px
+    margin: 0px
+    font-weight: 300
+    opacity: .4 
+    color: white
+.display-text-sm
+    font-size: 14px
+    letter-spacing: .4rem
+.hero
+    width: 100%
+    height: 100vh
+    // background-image: url('https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80')
+    background-size: cover
+    background-position: center
+    background-attachment: fixed
+    .vertical-center
+        height: 100vh
+.footer
+    background-color: #101010
+    padding-bottom: 2rem
+    min-height: 100px
+    height: 500px
+.copyright
+    background-color: #000000
+    padding: 2rem 0px
+    font-size: 1.1rem
+
+.learn-more-link
+    color: grey
+    text-decoration: none
+    transition: .2s ease-in-out all
+    font-size: 1.3rem
+    width: 100%
+    &:hover
+        color: $mainColor
+        &:after
+            content:  '  >'
+
+.breathe
+    padding: 2rem 0px
+.line-height-3
+    line-height: 3rem
+.nav
+    display: flex
+    align-items: center
+    justify-content: space-between
+    height: 80px
+    &.scrolling
+        position: fixed
+        width: 100%
+        z-index: 99999
+        background-color: black
+    ul
+        margin: 0px
+        padding: 0px
+        list-style-type: none
+        li
+            display: inline
+            margin: 2rem
+            font-size: 1rem
+            text-transform: uppercase
+            font-weight: bold
+            letter-spacing: .4rem
+            a
+                text-decoration: none
+                color: white
+                transition: .2s ease-in-out all
+                &:hover
+                    color: $mainColor
+                &.active
+                    color: $mainColor
+
+// button
+.btn
+    padding: 1rem 2.5rem
+    border: 1px solid $mainColor
+    text-decoration: none
+    color: white
+    text-transform: uppercase
+    font-size: 1.2rem
+    transition: .2s ease-in-out all
+    &:hover
+        color: $mainColor
+
+// color classes
+.text-primary
+    color: $mainColor
+
+// img placeholder
+.img-placeholder
+    width: 100%
+    height: 300px
+    background-color: #292929
+// helpers
+.container
+    max-width: none
+.text-center
+    text-align: center
+.text-right
+    text-align: right
+.bold
+    font-weight: bold
+.section
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 292px
+.vertical-center
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-flow: column 
+.dark
+    color: white
+    background-color: rgba(255,255,255,.01)
+
