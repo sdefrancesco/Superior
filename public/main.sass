@@ -61,27 +61,60 @@ h1
     background-color: #000000
     padding: 2rem 0px
     font-size: 1.1rem
-
+    span
+        opacity: .5
+        cursor: pointer
+        transition: .3s ease-in-out all
+        &:hover
+            opacity: 1
 .learn-more-link
-    color: grey
+    color: $mainColor
     text-decoration: none
     transition: .2s ease-in-out all
     font-size: 1.3rem
     width: 100%
     &:hover
         color: $mainColor
-        &:after
-            content:  '  >'
+
 
 .breathe
     padding: 2rem 0px
 .line-height-3
     line-height: 3rem
 .nav
-    display: flex
-    align-items: center
-    justify-content: space-between
+    .logo
+        &.returning-to-top
+            .a
+                stroke: $mainColor
+            .b
+                fill: white
+
+        cursor: pointer
+        .a
+            stroke: #2d2d2d
+            transition: .6s ease-in-out all
+        .b
+            fill: $mainColor
+            transition: .5s ease-in-out all
+            transition-delay: .1s 
+        &:hover
+            .a
+                stroke: $mainColor
+            .b
+                fill: white
+            
+    // display: flex
+    // align-items: center
+    // justify-content: space-between
     height: 80px
+    .nav-container
+        display: flex
+        align-items: center
+        justify-content: space-between
+        height: 100%
+        max-width: 80%
+        margin-left: auto
+        margin-right: auto
     &.scrolling
         position: fixed
         width: 100%
@@ -151,3 +184,66 @@ h1
     color: white
     background-color: rgba(255,255,255,.01)
 
+
+
+.form-input
+    margin-bottom: 1rem 
+    label
+        font-size: 1.1rem
+        text-transform: uppercase
+        letter-spacing: .3rem
+        margin-bottom: 1rem
+        font-weight: normal
+
+    input:-webkit-autofill,
+        -webkit-text-fill-color: white
+        -webkit-box-shadow: 0 0 0px 1000px #000 inset
+        border: none
+        background-color: rgba(16, 16, 16, 0.49019607843137253)
+        font-size: 1.2rem
+        border: 1px solid rgba(255, 255, 255, 0.00)
+        height: auto
+
+    input
+        border: 1px solid rgba(0,0,0,.9)
+        background-color: rgba(16, 16, 16, 0.49019607843137253)
+        font-size: 1.2rem
+        border: 1px solid rgba(255, 255, 255, 0.08)
+        height: auto
+        padding: 1.8rem 2rem
+        transition: .2s ease-in-out all
+        &:focus
+            border-color: $mainColor 
+        &::placeholder
+            text-transform: capitalize
+    textarea
+        border: 1px solid rgba(0,0,0,.9)
+        background-color: rgba(16, 16, 16, 0.49019607843137253)
+        font-size: 1.2rem
+        border: 1px solid rgba(255, 255, 255, 0.08)
+        max-width: 100%
+        min-height: 100px
+        max-height: 200px
+        min-width: 100%
+        &:focus
+            border-color: $mainColor 
+        &::placeholder
+            text-transform: capitalize
+    input[type='submit']
+        background-color: #060606
+        border: 1px solid transparent
+        padding: 0px
+        transition: .5s ease-in-out all
+        &:hover
+            background-color: $mainColor
+            color: black
+            text-shadow: 0px 2px 5px rgba(0,0,0,.5)
+            border: 1px solid $mainColor
+
+
+.ring
+    fill: $mainColor
+    stroke-width: 2px
+    stroke: black
+.churches
+    fill: $mainColor

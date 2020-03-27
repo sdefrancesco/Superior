@@ -20,25 +20,66 @@ for(let i=0; i< navElements.length; i++) {
 }
 
 
+let nav = document.querySelector('.nav')
+let navAnimation = anime.timeline({
+    autoplay: false
+})
+navAnimation.add({
+    // autoplay: false,
+    targets: nav,
+    translateY: [-70, 0],
+    duration: 900
+}).add({
+    targets: '.nav ul li',
+    opacity: [0, 1],
+    easing: 'easeInOutSine',
+    delay: function(el, i, l) {
+        if( i > 0) {
+            return i * 100
+        }
+        return 0
+    }
+}, '-=800')
+.add({
+    
+})
+
+
+
 window.addEventListener('scroll', function() {
-    let nav = document.querySelector('.nav')
+     
+    if(window.pageYOffset >= 150) {
+
+        if(!navAnimation.completed) {
+           
+            navAnimation.play()
+        } 
+    } else {
+        if(navAnimation.completed) {
+            // navAnimation.reset()
+            navAnimation.reverse()
+            navAnimation.play()
+        }
+        
+    } 
     nav.classList.add('scrolling')
+
 
     let elemPos1 = document.querySelector('#services').offsetTop
     let elem1Height = document.querySelector('#services').clientHeight
     // console.log(window.pageYOffset, elemPos1)
     if( window.pageYOffset >= elemPos1  - nav.clientHeight) {
         if(window.pageYOffset <= (elemPos1 + elem1Height) - nav.clientHeight) {
-            setActiveNavElement('services')
+            // setActiveNavElement('services')
             // console.log('add class here')
         } else {
             // console.log('remove class here')
-            removeActiveNavElement('services')
+            // removeActiveNavElement('services')
 
         }
     } 
     if(window.pageYOffset <= elemPos1 - nav.clientHeight) {
-        let navElements = document.querySelector('.nav').children[1].children
+        let navElements = document.querySelector('.nav .nav-container').children[1].children
         // console.log(element)
         for(let i=0; i< navElements.length; i++) {
             if(navElements[i].children[0].classList.contains('active')) {
@@ -50,35 +91,35 @@ window.addEventListener('scroll', function() {
     
 })
 
-function removeActiveNavElement(element) {
-    let navElements = document.querySelector('.nav').children[1].children
-    // console.log(element)
-    for(let i=0; i< navElements.length; i++) {
-        if(navElements[i].children[0].classList.contains('active')) {
-            // console.log(navElements[i], navElements[i].children[0])
-            navElements[i].children[0].classList.remove('active')
-        } 
-    }
-}
-function setActiveNavElement(element) {
-    let navElements = document.querySelector('.nav').children[1].children
-    // console.log(element)
-    for(let i=0; i< navElements.length; i++) {
-        if(navElements[i].getAttribute('scroll-to') == element) {
-            // console.log(navElements[i], navElements[i].children[0])
-            navElements[i].children[0].classList.add('active')
-        } else {
+// function removeActiveNavElement(element) {
+//     let navElements = document.querySelector('.nav .nav-container').children[1].children
+//     // console.log(element)
+//     for(let i=0; i< navElements.length; i++) {
+//         if(navElements[i].children[0].classList.contains('active')) {
+//             // console.log(navElements[i], navElements[i].children[0])
+//             navElements[i].children[0].classList.remove('active')
+//         } 
+//     }
+// }
+// function setActiveNavElement(element) {
+//     let navElements = document.querySelector('.nav .nav-container').children[1].children
+//     // console.log(element)
+//     for(let i=0; i< navElements.length; i++) {
+//         if(navElements[i].getAttribute('scroll-to') == element) {
+//             // console.log(navElements[i], navElements[i].children[0])
+//             navElements[i].children[0].classList.add('active')
+//         } else {
             
-        }
-    }
-}
+//         }
+//     }
+// }
 
 function scrollToPos(attribute) {
     let ele = document.getElementById(attribute)
     let pos = ele.offsetTop
     let currentPos = window.pageYOffset
     let navHeight = document.querySelector('.nav').clientHeight
-
+    
     anime({
         targets: 'html, body',
         scrollTop: [currentPos, pos - navHeight + 5],
@@ -86,3 +127,32 @@ function scrollToPos(attribute) {
         easing: 'easeInOutQuint',
     })
 }
+let logo = document.querySelector('.logo')
+function scrollToTop(callback) {
+    let currentPos = window.pageYOffset
+    if(currentPos > 0) {
+        logo.classList.add('returning-to-top')
+        anime({
+            targets: 'html,body',
+            scrollTop: [currentPos, 0],
+            duration: 1200,
+            easing: 'easeInOutQuint',
+            complete: function() {
+                return callback()
+            }
+        })
+    }
+}
+
+logo.addEventListener('click', function() {
+    // anime({
+    //     targets: '.a',
+    //     strokeDashoffset: [0, anime.setDashoffset, 0],
+    //     direction: 'alternate',
+    //     easing: 'easeInOutQuint',
+    //     duration: 1000
+    // })
+    scrollToTop(function() {
+        logo.classList.remove('returning-to-top')
+    })
+})
