@@ -161,6 +161,10 @@ h1.display-text {
   margin-right: auto;
 }
 
+.nav.alt {
+  background-color: black;
+}
+
 .nav.scrolling {
   position: fixed;
   width: 100%;
@@ -372,13 +376,85 @@ h1.display-text {
   border: 1px solid #FFC400;
 }
 
-.ring {
-  fill: #FFC400;
-  stroke-width: 2px;
-  stroke: black;
+.video {
+  position: relative;
 }
 
-.churches {
-  fill: #FFC400;
+.video .overlay {
+  position: absolute;
+  top: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.video .video-thumbnail {
+  width: 100%;
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+}
+
+.video .video-thumbnail img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.description-p {
+  line-height: 2.3rem;
+}
+
+.service-container {
+  width: 100%;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.service-container .full-service {
+  background-image: url("https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  position: relative;
+}
+
+.service-container .full-service .overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.service-container .full-service .overlay .inner {
+  padding: 1.6rem;
 }
 /*# sourceMappingURL=main.css.map */

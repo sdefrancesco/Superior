@@ -22,7 +22,7 @@ for(let i=0; i< navElements.length; i++) {
 
 let nav = document.querySelector('.nav')
 let navAnimation = anime.timeline({
-    autoplay: false
+    autoplay: false,
 })
 navAnimation.add({
     // autoplay: false,
@@ -40,31 +40,61 @@ navAnimation.add({
         return 0
     }
 }, '-=800')
-.add({
-    
-})
 
 
+let lastScroll = 0
+const body = document.body
 
 window.addEventListener('scroll', function() {
-     
-    if(window.pageYOffset >= 150) {
 
-        if(!navAnimation.completed) {
-           
-            navAnimation.play()
-        } 
-    } else {
-        if(navAnimation.completed) {
-            // navAnimation.reset()
-            navAnimation.reverse()
-            navAnimation.play()
-        }
+    const currentScroll = window.pageYOffset
+
+    if(currentScroll == 0) {
+        body.classList.remove('scroll-up')
+        nav.classList.remove('open')
+        anime({
+            targets: nav, 
+            translateY: [0, -80],
+            duration: 700
+        })
+        return
+    }
+    if(currentScroll > lastScroll && !body.classList.contains('scroll-down')) {
+        //scrolling down
+        body.classList.remove('scroll-up')
+        body.classList.add('scroll-down')
+        navAnimation.play()
+        nav.classList.add('open')
+        } else if (currentScroll < lastScroll && body.classList.contains('scroll-down')) {
+            nav.classList.remove('open')
+        body.classList.remove('scroll-down')
+        body.classList.add('scroll-up')
         
-    } 
+    } else if ( nav.classList.contains('open')) {
+        return
+    }
+    lastScroll= currentScroll
+
+
+
+    // if(window.pageYOffset >= 150 && body.classList.contains('scroll-down')) {
+    //     if(!navAnimation.completed) {
+    //         navAnimation.play()
+    //     }
+    // } 
+    // if(this.window.pageYOffset <= 10 && body.classList.contains('scroll-up')) {
+    //     navAnimation.reverse()
+    //     navAnimation.play()
+    //     navAnimation.reset()
+    //     // if(navAnimation.completed) {
+            
+    //     //     navAnimation.reverse()
+    //     //     console.log(0, 'animate out')
+    //     // }
+    // }
     nav.classList.add('scrolling')
 
-
+ 
     let elemPos1 = document.querySelector('#services').offsetTop
     let elem1Height = document.querySelector('#services').clientHeight
     // console.log(window.pageYOffset, elemPos1)
@@ -156,3 +186,40 @@ logo.addEventListener('click', function() {
         logo.classList.remove('returning-to-top')
     })
 })
+
+// load some images
+let unsplashImgs = document.getElementsByClassName('video-thumbnail')
+// console.log(unsplashImgs.length)
+for(let i=0; i < unsplashImgs.length; i++) {
+    
+    // getUnsplashImg(function(unsplashImg) {
+    //     unsplashImgs[i].style.backgroundImage = "url('" + unsplashImg.urls.small + "')"
+    // })
+    // changeBg(unsplashImgs[i])
+
+    // getUnsplashImg('small', unsplashImgs[i])
+
+}
+
+
+
+
+function changeBg(el, url) {
+    el.style.backgroundImage = "url('" + url + "')"
+}
+
+function getUnsplashImg(size, el) {
+    let xhr = new XMLHttpRequest
+    xhr.open('get', 'https://api.unsplash.com/photos/random?client_id=ZLplvXD6IlppCSowrMqmXmvPLgGqUNenhlzBYXAEJUM', true)
+    xhr.onload = function() {
+        let parseResponse = JSON.parse(this.responseText)
+        // console.log(parseResponse)
+        changeBg(el, parseResponse.urls.small)
+        // return parseResponse
+    }
+    xhr.send()
+}
+
+
+
+

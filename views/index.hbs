@@ -97,6 +97,9 @@
                 </div>
             </div>
         </div>
+
+
+
         <br />
         <br />
         <br />
@@ -120,14 +123,15 @@
         <div class="container">
             <div class="row">
                 <div class="six columns text-center  offset-by-three">
-                    <h1 class="display-text-2">Lorem, ipsum dolor..</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, placeat modi. Iusto possimus amet sapiente facere molestiae perferendis, deserunt velit?</p>
+                    <h1 class="display-text-2">Curated For You</h1>
+                    <p>We carefully, meticulously craft our films into a beautiful story unique to our couple that can be cherished for friends, family & generations to come</p>
                     <br />
                     <br />
                     <br />
                     <br />
                 </div>
             </div>
+            <br />
             <div class="row">
                 <div class="five columns">
                     <div class="img-placeholder"></div>
@@ -172,6 +176,34 @@
         <br />
         <br />
         <br />
+    </div>
+      <div class="dark text-center breathe section">
+        <div>
+            <h6 class='display-text-2-pre'>check out some of</h6>
+            <h1 class='display-text-2'>our work</h1>
+        </div>
+    </div>
+    <div id="work" class="breathe">
+        <div class="container">
+        <div class="row">
+                {{#each videos}} 
+                    <div class="three columns">
+                                            <div class="video">
+                        <div class="overlay">
+                            plY!
+                        </div>
+                        <div class="video-thumbnail">
+                            <img src='https://images.unsplash.com/photo-1584847229569-c80f5bd78cd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80' width='100px' height='100px' alt="">
+                        </div>
+                    </div>
+                    <h6>
+                        <a href='/videos/{{returnVimeoId link}}'}}>{{name}}</a>
+                        {{pictures}}
+                    </h6>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
     </div>
       <div class="dark text-center breathe section">
         <div>
@@ -243,7 +275,7 @@
             </div>
         </div>
     </div>
-    <div class="footer">
+    <div class="footer breathe">
 
     </div>
     <div class="copyright">
@@ -251,6 +283,11 @@
             <span>Designed By <b class='text-primary'>SUPERIOR CREATIVITY - WEB/BRANDING</b></span>
         </div>
     </div>
+
+    {{!-- <iframe src="https://player.vimeo.com/video/384155730" width='400px' height="400px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> --}}
+ 
+
+    <script src="https://player.vimeo.com/api/player.js"></script>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js'></script>
     <script src='/js/main.js'></script>
