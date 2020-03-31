@@ -29,7 +29,8 @@ navAnimation.add({
     targets: nav,
     translateY: [-70, 0],
     duration: 900
-}).add({
+})
+.add({
     targets: '.nav ul li',
     opacity: [0, 1],
     easing: 'easeInOutSine',
@@ -153,7 +154,7 @@ function scrollToPos(attribute) {
     anime({
         targets: 'html, body',
         scrollTop: [currentPos, pos - navHeight + 5],
-        duration: 1200,
+        duration: 500,
         easing: 'easeInOutQuint',
     })
 }
