@@ -461,6 +461,14 @@ h1.display-text {
 .breadcrumb {
   height: 50px;
   background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0px;
+  padding: 0px;
 }
 
 .breadcrumb .container {
@@ -471,6 +479,36 @@ h1.display-text {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.breadcrumb li {
+  display: inline;
+  font-size: .94rem;
+  letter-spacing: .1rem;
+  padding-right: 3rem;
+  text-transform: uppercase;
+  margin: 0px;
+  padding-bottom: 0px;
+}
+
+.breadcrumb li.active {
+  color: #FFC400;
+}
+
+.breadcrumb li a {
+  text-decoration: none;
+  color: white;
+  -webkit-transition: .2s ease-in-out all;
+  transition: .2s ease-in-out all;
+}
+
+.breadcrumb li a:hover {
+  color: #FFC400;
+}
+
+.breadcrumb li:not(.active):after {
+  content: '>';
+  margin-left: 1.5em;
 }
 
 .breadcrumb ul {
@@ -493,6 +531,19 @@ h1.display-text {
 }
 
 .breadcrumb ul li.active {
+  color: #FFC400;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
   color: #FFC400;
 }
 /*# sourceMappingURL=main.css.map */

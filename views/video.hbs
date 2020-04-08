@@ -46,20 +46,22 @@
            
         </div>
     </div>
-    <div class="breadcrumb">
-        <div class="container">
-            <ul>
+    <div class="container">
+        <ol class="breadcrumb">
+        {{#each breadcrumb}}
+            {{#unless @last}}
                 <li>
-                    Home
+                    <a href="{{this.url}}" itemprop="url">
+                        <span itemprop="title">{{this.label}}</span>
+                    </a>
                 </li>
-                <li>
-                    Videos
-                </li>
+            {{else}}
                 <li class='active'>
-                    {{video.name}}
+                    <span> {{../video.name}}</span>
                 </li>
-            </ul>
-        </div>
+            {{/unless}}
+        {{/each}}
+    </ol>
     </div>
     <div class="container">
 

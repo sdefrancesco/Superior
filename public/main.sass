@@ -295,10 +295,35 @@ h1
 .breadcrumb
     height: 50px
     background-color: transparent
+    display: flex
+    align-items: center
+    margin: 0px
+    padding: 0px
     .container
         height: 100%
         display: flex
         align-items: center
+    li
+        display: inline
+        font-size: .94rem
+        letter-spacing: .1rem
+        padding-right: 3rem
+        text-transform: uppercase
+        margin: 0px
+        padding-bottom: 0px
+        &.active
+            color: $mainColor
+        a
+            text-decoration: none
+            color: white
+            transition: .2s ease-in-out all
+            &:hover
+                color: $mainColor
+
+        &:not(.active)
+            &:after
+                content: '>'
+                margin-left: 1.5em
     ul
         list-style-type: none
         margin: 0px
@@ -315,3 +340,13 @@ h1
                     margin-left: 1.5rem
             &.active
                 color: $mainColor
+
+
+.mt-1
+    margin-top: 1rem
+
+a
+    color: white
+    text-decoration: none
+    &:hover
+        color: $mainColor

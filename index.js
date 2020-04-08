@@ -2,10 +2,13 @@ const express = require('express')
 const Vimeo = require('vimeo').Vimeo
 const client = new Vimeo("5f8655ce645e892ffab88c703859aab091301ed3", "sJblbrDHuIlHRViPqKnRgC5a3t30HcRWpz359vxmj0vA/tusgNoO11vnzj+dZKZiQGHvXfY0IREv/Jw23J9qiKnmVoaKNyCNwdKymFPmfBQdOUu8iRQxSrQNZOLFESH0", "17fb45a5043a9a5e10b621716dc47af9");
 const hbs = require('hbs')
+const breadcrumb = require('express-url-breadcrumb')
 const app = express()
 
 
 app.use(express.static('./public'))
+app.use(breadcrumb())
+
 app.set('view engine', hbs)
 
 
@@ -38,7 +41,7 @@ app.get('/', (req, res) => {
     })
 })
 
-app.get('/videos/:id', (req, res)=> {
+app.get('/videos/:id', breadcrumb(), (req, res)=> {
     client.request({
         method: 'GET',
         path: '/me/videos/' + req.params.id,

@@ -221,6 +221,30 @@ function getUnsplashImg(size, el) {
     xhr.send()
 }
 
+function setVideoThumbnail(url, target) {
+    let element = target
+    element.src = url
+    
+}
 
 
+function queryVimeo(url, target) {
+    let xhr = new XMLHttpRequest
+    xhr.open('get', 'https://vimeo.com/api/oembed.json?url=' + url, true )
+    const tg = target
+    xhr.onload = function() {
+        // console.log('loaded')
+        let response = JSON.parse(this.responseText)
+        // console.log(response)
 
+        setVideoThumbnail(response.thumbnail_url, tg)
+    }
+    xhr.send()
+}
+
+let previewVideos = document.getElementsByClassName('video-preview')
+
+for(let i=0; i< previewVideos.length;i++) {
+    // console.log(previewVideos[i].getAttribute('vimeo-id'))
+    queryVimeo(previewVideos[i].getAttribute('vimeo-id'), previewVideos[i].children[0])
+}
