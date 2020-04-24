@@ -40,7 +40,23 @@ app.get('/', (req, res) => {
     //   console.log(body)
     })
 })
-
+app.get('/videos', breadcrumb(), (req, res) => {
+    client.request({
+        method: 'GET',
+        path: '/me/videos',
+        query: {
+            name: req.query.title
+        }
+    }, function(err, body, status_code, headers) {
+        if (err) {
+            console.log(err);
+          }
+        //   console.log(body)
+          res.render('./videos.hbs', {
+              video: body
+          })
+    })
+})
 app.get('/videos/:id', breadcrumb(), (req, res)=> {
     client.request({
         method: 'GET',
