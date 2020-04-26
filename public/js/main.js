@@ -20,107 +20,107 @@ for(let i=0; i< navElements.length; i++) {
 }
 
 
-let nav = document.querySelector('.nav')
-let navAnimation = anime.timeline({
-    autoplay: false,
-})
-navAnimation.add({
-    // autoplay: false,
-    targets: nav,
-    translateY: [-70, 0],
-    duration: 900
-})
-.add({
-    targets: '.nav ul li',
-    opacity: [0, 1],
-    easing: 'easeInOutSine',
-    delay: function(el, i, l) {
-        if( i > 0) {
-            return i * 100
-        }
-        return 0
-    }
-}, '-=800')
+// let nav = document.querySelector('.nav')
+// let navAnimation = anime.timeline({
+//     autoplay: false,
+// })
+// navAnimation.add({
+//     // autoplay: false,
+//     targets: nav,
+//     translateY: [-70, 0],
+//     duration: 900,
+// })
+// .add({
+//     targets: '.nav ul li',
+//     opacity: [0, 1],
+//     easing: 'easeInOutSine',
+//     delay: function(el, i, l) {
+//         if( i > 0) {
+//             return i * 100
+//         }
+//         return 0
+//     }
+// }, '-=800')
 
 
-let lastScroll = 0
-const body = document.body
+// let lastScroll = 0
+// const body = document.body
 
-window.addEventListener('scroll', function() {
+// window.addEventListener('scroll', function() {
 
-    const currentScroll = window.pageYOffset
+//     const currentScroll = window.pageYOffset
 
-    if(currentScroll == 0) {
-        body.classList.remove('scroll-up')
-        nav.classList.remove('open')
-        anime({
-            targets: nav, 
-            translateY: [0, -80],
-            duration: 700
-        })
-        return
-    }
-    if(currentScroll > lastScroll && !body.classList.contains('scroll-down')) {
-        //scrolling down
-        body.classList.remove('scroll-up')
-        body.classList.add('scroll-down')
-        navAnimation.play()
-        nav.classList.add('open')
-        } else if (currentScroll < lastScroll && body.classList.contains('scroll-down')) {
-            nav.classList.remove('open')
-        body.classList.remove('scroll-down')
-        body.classList.add('scroll-up')
+//     if(currentScroll == 0) {
+//         body.classList.remove('scroll-up')
+//         nav.classList.remove('open')
+//         anime({
+//             targets: nav, 
+//             translateY: [0, -80],
+//             duration: 700
+//         })
+//         return
+//     }
+//     if(currentScroll > lastScroll && !body.classList.contains('scroll-down')) {
+//         //scrolling down
+//         body.classList.remove('scroll-up')
+//         body.classList.add('scroll-down')
+//         navAnimation.play()
+//         nav.classList.add('open')
+//         } else if (currentScroll < lastScroll && body.classList.contains('scroll-down')) {
+//             nav.classList.remove('open')
+//         body.classList.remove('scroll-down')
+//         body.classList.add('scroll-up')
         
-    } else if ( nav.classList.contains('open')) {
-        return
-    }
-    lastScroll= currentScroll
+//     } else if ( nav.classList.contains('open')) {
+//         return
+//     }
+//     lastScroll= currentScroll
 
 
 
-    // if(window.pageYOffset >= 150 && body.classList.contains('scroll-down')) {
-    //     if(!navAnimation.completed) {
-    //         navAnimation.play()
-    //     }
-    // } 
-    // if(this.window.pageYOffset <= 10 && body.classList.contains('scroll-up')) {
-    //     navAnimation.reverse()
-    //     navAnimation.play()
-    //     navAnimation.reset()
-    //     // if(navAnimation.completed) {
+//     // if(window.pageYOffset >= 150 && body.classList.contains('scroll-down')) {
+//     //     if(!navAnimation.completed) {
+//     //         navAnimation.play()
+//     //     }
+//     // } 
+//     // if(this.window.pageYOffset <= 10 && body.classList.contains('scroll-up')) {
+//     //     navAnimation.reverse()
+//     //     navAnimation.play()
+//     //     navAnimation.reset()
+//     //     // if(navAnimation.completed) {
             
-    //     //     navAnimation.reverse()
-    //     //     console.log(0, 'animate out')
-    //     // }
-    // }
-    nav.classList.add('scrolling')
+//     //     //     navAnimation.reverse()
+//     //     //     console.log(0, 'animate out')
+//     //     // }
+//     // }
+//     nav.classList.add('scrolling')
 
  
-    let elemPos1 = document.querySelector('#services').offsetTop
-    let elem1Height = document.querySelector('#services').clientHeight
-    // console.log(window.pageYOffset, elemPos1)
-    if( window.pageYOffset >= elemPos1  - nav.clientHeight) {
-        if(window.pageYOffset <= (elemPos1 + elem1Height) - nav.clientHeight) {
-            // setActiveNavElement('services')
-            // console.log('add class here')
-        } else {
-            // console.log('remove class here')
-            // removeActiveNavElement('services')
+//     let elemPos1 = document.querySelector('#services').offsetTop
+//     let elem1Height = document.querySelector('#services').clientHeight
+//     // console.log(window.pageYOffset, elemPos1)
+//     if( window.pageYOffset >= elemPos1  - nav.clientHeight) {
+//         if(window.pageYOffset <= (elemPos1 + elem1Height) - nav.clientHeight) {
+//             // setActiveNavElement('services')
+//             // console.log('add class here')
+//         } else {
+//             // console.log('remove class here')
+//             // removeActiveNavElement('services')
 
-        }
-    } 
-    if(window.pageYOffset <= elemPos1 - nav.clientHeight) {
-        let navElements = document.querySelector('.nav .nav-container').children[1].children
-        // console.log(element)
-        for(let i=0; i< navElements.length; i++) {
-            if(navElements[i].children[0].classList.contains('active')) {
-                // console.log(navElements[i], navElements[i].children[0])
-                navElements[i].children[0].classList.remove('active')
-            } 
-        }
-    }
+//         }
+//     } 
+//     if(window.pageYOffset <= elemPos1 - nav.clientHeight) {
+//         let navElements = document.querySelector('.nav .nav-container').children[1].children
+//         // console.log(element)
+//         for(let i=0; i< navElements.length; i++) {
+//             if(navElements[i].children[0].classList.contains('active')) {
+//                 // console.log(navElements[i], navElements[i].children[0])
+//                 navElements[i].children[0].classList.remove('active')
+//             } 
+//         }
+//     }
     
-})
+// })
 
 // function removeActiveNavElement(element) {
 //     let navElements = document.querySelector('.nav .nav-container').children[1].children
@@ -146,6 +146,7 @@ window.addEventListener('scroll', function() {
 // }
 
 function scrollToPos(attribute) {
+    event.preventDefault()
     let ele = document.getElementById(attribute)
     let pos = ele.offsetTop
     let currentPos = window.pageYOffset
