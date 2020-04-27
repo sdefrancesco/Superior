@@ -157,6 +157,8 @@ h1
     text-transform: uppercase
     font-size: 1.2rem
     transition: .2s ease-in-out all
+    font-weight: bold
+    font-family: open sans
     &:hover
         color: $mainColor
 
@@ -170,6 +172,10 @@ h1
     height: 300px
     background-color: #292929
     object-fit: cover
+    &.left-clip
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 25% 100%)
+    &.right-clip
+        clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%)
     img
         width: 100%
         height: 100%

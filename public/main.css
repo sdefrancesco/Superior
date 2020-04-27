@@ -220,6 +220,8 @@ h1.display-text {
   font-size: 1.2rem;
   -webkit-transition: .2s ease-in-out all;
   transition: .2s ease-in-out all;
+  font-weight: bold;
+  font-family: open sans;
 }
 
 .btn:hover {
@@ -236,6 +238,16 @@ h1.display-text {
   background-color: #292929;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.img-placeholder.left-clip {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 25% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 25% 100%);
+}
+
+.img-placeholder.right-clip {
+  -webkit-clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
 }
 
 .img-placeholder img {
