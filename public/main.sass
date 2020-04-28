@@ -148,6 +148,10 @@ h1
                 &.active
                     color: $mainColor
 
+.logo
+    @media (max-width: 500px) 
+        width: 50%
+
 // button
 .btn
     padding: 1rem 2.5rem
@@ -159,6 +163,8 @@ h1
     transition: .2s ease-in-out all
     font-weight: bold
     font-family: open sans
+    display: inline-block
+    margin-bottom: 1rem
     &:hover
         color: $mainColor
 
@@ -172,10 +178,15 @@ h1
     height: 300px
     background-color: #292929
     object-fit: cover
+
     &.left-clip
         clip-path: polygon(0 0, 100% 0, 100% 100%, 25% 100%)
+        @media(max-width: 500px)
+            clip-path: none
     &.right-clip
         clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%)
+        @media(max-width: 500px)
+            clip-path: none
     img
         width: 100%
         height: 100%
@@ -235,6 +246,8 @@ h1
         height: auto
         padding: 1.8rem 2rem
         transition: .2s ease-in-out all
+        @media(max-width: 500px)
+            font-size: 16px
         &:focus
             border-color: $mainColor 
         &::placeholder
@@ -248,6 +261,8 @@ h1
         min-height: 100px
         max-height: 200px
         min-width: 100%
+        @media(max-width: 500px)
+            font-size: 16px
         &:focus
             border-color: $mainColor 
         &::placeholder

@@ -211,6 +211,12 @@ h1.display-text {
   color: #FFC400;
 }
 
+@media (max-width: 500px) {
+  .logo {
+    width: 50%;
+  }
+}
+
 .btn {
   padding: 1rem 2.5rem;
   border: 1px solid #FFC400;
@@ -222,6 +228,8 @@ h1.display-text {
   transition: .2s ease-in-out all;
   font-weight: bold;
   font-family: open sans;
+  display: inline-block;
+  margin-bottom: 1rem;
 }
 
 .btn:hover {
@@ -245,9 +253,23 @@ h1.display-text {
           clip-path: polygon(0 0, 100% 0, 100% 100%, 25% 100%);
 }
 
+@media (max-width: 500px) {
+  .img-placeholder.left-clip {
+    -webkit-clip-path: none;
+            clip-path: none;
+  }
+}
+
 .img-placeholder.right-clip {
   -webkit-clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
           clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
+}
+
+@media (max-width: 500px) {
+  .img-placeholder.right-clip {
+    -webkit-clip-path: none;
+            clip-path: none;
+  }
 }
 
 .img-placeholder img {
@@ -345,6 +367,12 @@ h1.display-text {
   transition: .2s ease-in-out all;
 }
 
+@media (max-width: 500px) {
+  .form-input input {
+    font-size: 16px;
+  }
+}
+
 .form-input input:focus {
   border-color: #FFC400;
 }
@@ -374,6 +402,12 @@ h1.display-text {
   min-height: 100px;
   max-height: 200px;
   min-width: 100%;
+}
+
+@media (max-width: 500px) {
+  .form-input textarea {
+    font-size: 16px;
+  }
 }
 
 .form-input textarea:focus {
