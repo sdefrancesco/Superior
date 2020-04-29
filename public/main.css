@@ -116,6 +116,8 @@ h1.display-text {
 .nav.fixed {
   position: fixed;
   background-color: black;
+  -webkit-box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.39);
+          box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.39);
   width: 100%;
   z-index: 99999;
 }
@@ -614,5 +616,14 @@ a {
 
 a:hover {
   color: #FFC400;
+}
+
+@media (max-width: 500px) {
+  .logo {
+    width: 40%;
+  }
+  .nav-inner {
+    display: none;
+  }
 }
 /*# sourceMappingURL=main.css.map */

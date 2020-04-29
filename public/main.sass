@@ -86,6 +86,7 @@ h1
     &.fixed
         position: fixed
         background-color: black
+        box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.39)
         width: 100%
         z-index: 99999
     .logo
@@ -386,3 +387,9 @@ a
     text-decoration: none
     &:hover
         color: $mainColor
+
+@media (max-width: 500px)
+    .logo
+        width: 40%
+    .nav-inner
+        display: none
