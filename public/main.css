@@ -640,6 +640,9 @@ img {
 }
 
 @media (max-width: 500px) {
+  .spacer {
+    height: 80px;
+  }
   .logo {
     width: 40%;
   }
@@ -672,6 +675,12 @@ img {
   }
   select {
     font-size: 16px;
+  }
+  p {
+    margin-bottom: 0px;
+  }
+  .vertical-center {
+    background-color: transparent;
   }
 }
 
