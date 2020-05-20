@@ -215,7 +215,7 @@ h1.display-text {
 
 @media (max-width: 500px) {
   .logo {
-    width: 50%;
+    width: 30%;
   }
 }
 
@@ -644,16 +644,17 @@ img {
     height: 80px;
   }
   .logo {
-    width: 40%;
+    width: 30%;
   }
   .nav-inner {
     display: none;
   }
   .nav .hamburger-menu {
-    width: 10%;
+    width: 5%;
   }
   .nav.fixed {
     background-color: rgba(0, 0, 0, 0.88);
+    height: 50px;
   }
   .section {
     height: 150px;
@@ -679,7 +680,7 @@ img {
   p {
     margin-bottom: 0px;
   }
-  .vertical-center {
+  .hero.vertical-center {
     background-color: transparent;
   }
 }
