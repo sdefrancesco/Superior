@@ -2,10 +2,12 @@ let navElements = document.querySelector('.nav ul').children
 
 for(let i=0; i< navElements.length; i++) {
     navElements[i].addEventListener('click', function() {
-        //prevent user from reloading the page after clicking nav link
-        event.preventDefault()
-
-        scrollToPos(navElements[i].getAttribute('scroll-to'))
+        //check if nav link has a scroll-to attribute
+        if(navElements[i].getAttribute('scroll-to')) {
+            //prevent user from reloading the page after clicking nav link
+            event.preventDefault()
+            scrollToPos(navElements[i].getAttribute('scroll-to'))
+        }
 
         // this.children[0].classList.add('active')
         for(let x=0; x< navElements.length; x++) {
