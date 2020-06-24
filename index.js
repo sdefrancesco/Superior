@@ -76,6 +76,12 @@ app.get('/videos/:id', breadcrumb(), (req, res)=> {
     })
 })
 
+app.get('/about', breadcrumb(), (req, res)=> {
+    res.render('about.hbs', {
+        title: 'About Us'
+    })
+})
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log('Express server listening on port', port)
