@@ -503,6 +503,10 @@ h1.display-text {
   height: 100%;
 }
 
+.video-preview-title {
+  margin-top: 1rem;
+}
+
 .description-p {
   line-height: 2.3rem;
 }
