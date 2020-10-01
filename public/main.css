@@ -146,21 +146,21 @@ h1.display-text {
 }
 
 .nav .logo.returning-to-top .a {
-  stroke: #FFC400;
-}
-
-.nav .logo.returning-to-top .b {
   fill: white;
 }
 
+.nav .logo.returning-to-top .b {
+  stroke: white;
+}
+
 .nav .logo .a {
-  stroke: #2d2d2d;
+  fill: #FFC400;
   -webkit-transition: .6s ease-in-out all;
   transition: .6s ease-in-out all;
 }
 
 .nav .logo .b {
-  fill: #FFC400;
+  stroke: #797979;
   -webkit-transition: .5s ease-in-out all;
   transition: .5s ease-in-out all;
   -webkit-transition-delay: .1s;
@@ -168,11 +168,11 @@ h1.display-text {
 }
 
 .nav .logo:hover .a {
-  stroke: #FFC400;
+  fill: #ffffff;
 }
 
 .nav .logo:hover .b {
-  fill: white;
+  stroke: #FFC400;
 }
 
 .nav .nav-container {
