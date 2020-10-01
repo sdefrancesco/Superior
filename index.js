@@ -11,6 +11,7 @@ app.use(breadcrumb())
 
 app.set('view engine', hbs)
 
+// app.use(express.static('public'))
 
 hbs.registerHelper('returnVimeoId', function(url) { 
     var regex = new RegExp(/(https?:\/\/)?(www.)?(player.)?vimeo.com\/([a-z]*\/)*([0-9]{6,11})[?]?.*/);
