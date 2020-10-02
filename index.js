@@ -58,6 +58,11 @@ app.get('/videos', breadcrumb(), (req, res) => {
           })
     })
 })
+app.get('/photography', (req, res) => {
+    res.render('./photography.hbs', {
+        title: 'Photography'
+    })
+})
 app.get('/videos/:id', breadcrumb(), (req, res)=> {
     client.request({
         method: 'GET',
