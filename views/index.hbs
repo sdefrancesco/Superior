@@ -6,10 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/skeleton.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="/main.css">
     <title>Superior Creativity</title>
 </head>
 <body>
+    <style>
+        .swiper-container {
+    width: 600px;
+    height: 100px;
+    padding-bottom: 1rem;
+}
+    </style>
     <div class="nav fixed">
         <div class="placeholder">
 
@@ -94,13 +102,51 @@
     
     <div class="hero">
         <div class="vertical-center">
-            <div>
-                <div style='display:flex; align-items:center; justify-content:center; margin-bottom:2rem'>
-                    <img width='8%'src="/img/logo-infinity.png" alt="">
+            
+                <div>
+                    <div style='display:flex; align-items:center; justify-content:center; margin-bottom:2rem'>
+                        <img width='8%'src="/img/logo-infinity.png" alt="">
+                    </div>
+                    <h5 class='text-center display-pre'>LUXURY MEDIA</h5>
+                    <h1 class='display-text text-center'>One Of A Kind</h1>
                 </div>
+                <br /><br />
+                <div class="testimonies" style='margin-top:5rem max-width:550px; height: 100px; justify-self: flex-end'>
+                    <div class="swiper-container">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+                                <div class='text-center'>
+                                    <p>"This is the most amazing work, i've ever seen"</p>
+                                    <h6 class='text-center'>-Nick Gabriel</h6>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class='text-center'>
+                                    <p>"My boyfriend is the best!"</p>
+                                    <h6 class='text-center'>-Denise Flores</h6>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div  class='text-center'>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, alias?</p>
+                                    <h6 class='text-center'>-Carl Stanley</h6>
+                                </div>
+                            </div>
+                          
+                        </div>
+                        <!-- If we need pagination -->
+                        <div class="swiper-pagination"></div>
+
+                    </div>
+                </div>
+<<<<<<< HEAD
                 <h5 class='text-center display-pre'>LUXURY MEDIA</h5>
                 <h1 class='display-text text-center'>One Of A Kind</h1>
             </div>
+=======
+>>>>>>> add-swiper-to-home
         </div>
     </div>
     <div class="dark text-center breathe section">
@@ -379,7 +425,7 @@
         </div>
     </div>
     <div class="footer breathe vertical-center">
-        <img src="/img/logo-color.png" width='30%'alt="">
+        <img src="/img/logo-color.png" width='20%'alt="">
     </div>
     <div class="copyright">
         <div class="container">
@@ -392,6 +438,35 @@
 
     <script src="https://player.vimeo.com/api/player.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js'></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src='/js/main.js'></script>
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+  autoplay: {
+    
+    disableOnInteraction: true,
+},
+  effect: 'fade',
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  fadeEffect: { crossFade: true },
+  autoplay: {
+      delay: 600,
+      disableOnInteraction: true,
+  },
+  speed: 1000, 
+
+
+})
+
+    </script>
 </body>
 </html>
