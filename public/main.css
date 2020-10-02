@@ -12,8 +12,24 @@ body {
 }
 
 #photography img {
-  width: 24%;
+  width: 25%;
   margin: 0px;
+}
+
+#photography .imgs {
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
 }
 
 h1 {
