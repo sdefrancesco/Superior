@@ -124,14 +124,14 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class='text-center'>
-                                    <p>"This is the most amazing work, i've ever seen"</p>
-                                    <h6 class='text-center'>-Nick Gabriel</h6>
+                                    <p>"My boyfriend is the best!"</p>
+                                    <h6 class='text-center'>-Denise Flores</h6>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div  class='text-center'>
-                                    <p>"This is the most amazing work, i've ever seen"</p>
-                                    <h6 class='text-center'>-Nick Gabriel</h6>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, alias?</p>
+                                    <h6 class='text-center'>-Carl Stanley</h6>
                                 </div>
                             </div>
                           
@@ -439,8 +439,11 @@
   // Optional parameters
   direction: 'horizontal',
   loop: true,
-  autoplay: true,
-  effect: 'slide',
+  autoplay: {
+    
+    disableOnInteraction: true,
+},
+  effect: 'fade',
 
   // If we need pagination
   pagination: {
@@ -448,9 +451,16 @@
   },
 
   // Navigation arrows
+  fadeEffect: { crossFade: true },
+  autoplay: {
+      delay: 600,
+      disableOnInteraction: true,
+  },
+  speed: 1000, 
 
 
 })
+
     </script>
 </body>
 </html>
