@@ -3,6 +3,7 @@ const Vimeo = require('vimeo').Vimeo
 const client = new Vimeo("5f8655ce645e892ffab88c703859aab091301ed3", "sJblbrDHuIlHRViPqKnRgC5a3t30HcRWpz359vxmj0vA/tusgNoO11vnzj+dZKZiQGHvXfY0IREv/Jw23J9qiKnmVoaKNyCNwdKymFPmfBQdOUu8iRQxSrQNZOLFESH0", "17fb45a5043a9a5e10b621716dc47af9");
 const hbs = require('hbs')
 const breadcrumb = require('express-url-breadcrumb')
+const Flickr = require('flickr-sdk')
 const app = express()
 
 
