@@ -25,6 +25,7 @@ body
         align-items: center;
         justify-content: center;
         flex-flow: wrap;
+        cursor: pointer
 
 h1
     margin: 0px
@@ -423,6 +424,47 @@ h1
             &.active
                 color: $mainColor
 
+.lightbox
+    width: 100%
+    height: 100vh
+    background-color: rgba(0,0,0,.82)
+    position: fixed
+    z-index: 999999
+    top: 0px
+    display: flex
+    align-items: center
+    justify-content: center
+    // animation: lightboxfade .3s ease-in-out
+    @keyframes lightboxfade
+        0%
+            opacity: 0%
+        100%
+            opacity: 100%
+    .lightbox-container
+        padding: 3rem
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 90%
+        width: 50%
+        .lightbox-img
+            // animation: lightbox-image .4s ease-in-out forwards
+            // animation-delay: .8s
+            height: 100%
+            // border: 1px solid rgb(58 71%)
+            
+            &.transition
+                animation: lightbox-transition .4s ease-in-out 
+@keyframes lightbox-transition
+    0% 
+        opacity: 100
+    100%
+        opacity: 0
+@keyframes lightbox-image 
+    0%
+        opacity: 0
+    100%
+        opacity: 100
 
 .mt-1
     margin-top: 1rem
