@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Users</h1>
+        
+        <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Email</th>
+      <th scope="col">Password</th>
+      <th scope="col">Admin</th>
+      <th scope="col">Update</th>
+      <th scope="col">Remove</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each users}}
+    <tr>
+      <td>{{_id}}</td>
+      <td>{{email}}</td>
+      <td>{{password}}</td>
+      <td>{{admin}}</td>
+      <td>
+          <form action="/admin/users/{{_id}}/update">
+            <input type="submit" value='update'>
+          </form>
+      </td>
+      <td>
+        <form action="/admin/users/{{_id}}/delete" method='post'>
+            <input type="submit" value='delete'/>
+        </form>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+    </div>
+</body>
+</html>

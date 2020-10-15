@@ -7,6 +7,26 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.login-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+}
+
+.login-container .login {
+  background-color: black;
+  width: 300px;
+  padding: 6rem 4rem 1rem;
+  border-radius: 5px;
+}
+
 .fill-primary {
   fill: #FFC400;
 }
