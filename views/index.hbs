@@ -425,31 +425,31 @@
                     <img class='contact-img' src="/img/Nick.jpg" alt="" width='100%'>
                 </div>
                 <div class="six columns offset-by-one">
-                    <form action="">
+                    <form action="/send-email" method='post'>
                         <div class="row">
                             <div class="six columns">
                                 <div class="form-input">
                                     <label for="">First Name</label>
-                                    <input class="u-full-width" type="text" placeholder='first name'/>
+                                    <input name='firstname' class="u-full-width" type="text" placeholder='first name'/>
                                 </div>
                             </div>
                             <div class="six columns">
                                 <div class="form-input">
                                     <label for="">Last Name</label>
-                                    <input class="u-full-width" type="text" placeholder='last name'/>
+                                    <input name='lastname' class="u-full-width" type="text" placeholder='last name'/>
                                 </div>
                             </div>
                             <div class="twelve columns">
                                 <div class="form-input">
                                     <label for="">Email</label>
-                                    <input class="u-full-width" type="email" placeholder='email' />
+                                    <input name='email' class="u-full-width" type="email" placeholder='email' />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="four columns">
                                     <div class="form-input">
                                         <label for="">Type</label>
-                                        <select class="u-full-width" type="text" placeholder='first name'>
+                                        <select name='partytype' class="u-full-width" type="text" placeholder='first name'>
                                             <option value="">Wedding</option>
                                             <option value="">Bar/Bat Mitzvah</option>
                                             <option value="">Sweet Sixteen</option>
@@ -462,20 +462,20 @@
                                 <div class="four columns">
                                     <div class="form-input">
                                         <label for="">Date</label>
-                                        <input class="u-full-width" type="date" placeholder='first name'/>
+                                        <input name='date' class="u-full-width" type="date" placeholder='first name'/>
                                     </div>
                                 </div>
                                 <div class="four columns">
                                     <div class="form-input">
                                         <label for="">Location</label>
-                                        <input class="u-full-width" type="text" placeholder='Event Location'/>
+                                        <input name='location' class="u-full-width" type="text" placeholder='Event Location'/>
                                     </div>
                                 </div>
                             </div>
                             <div class="twelve columns">
                                                                 <div class='form-input'>
                                     <label for="">Other Details</label>
-                                    <textarea class="u-full-width" type="submit" placeholder='message'></textarea>
+                                    <textarea name='message' class="u-full-width" type="submit" placeholder='message'></textarea>
                                 </div>
                                 <div class="form-input">
                                     <input class="button-primary u-full-width"  type="submit"/>
