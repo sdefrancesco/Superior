@@ -11,6 +11,18 @@ body {
   fill: #FFC400;
 }
 
+.inquiry h1 {
+  font-size: 2rem;
+}
+
+.inquiry h5 {
+  font-size: 1.2rem;
+}
+
+.inquiry .sub {
+  color: #7d7d7d;
+}
+
 #photography img {
   width: 25%;
   margin: 0px;
@@ -403,6 +415,10 @@ h1.display-text {
   font-weight: normal;
 }
 
+.form-input .no-padding {
+  padding: 1rem 2rem;
+}
+
 .form-input input:-webkit-autofill {
   -webkit-text-fill-color: white;
   -webkit-box-shadow: 0 0 0px 1000px #000 inset;
@@ -417,7 +433,6 @@ h1.display-text {
   background-color: rgba(16, 16, 16, 0.490196);
   border: 1px solid rgba(255, 255, 255, 0.08);
   font-size: 1.2rem;
-  padding: 1.8rem 2rem;
 }
 
 .form-input input {

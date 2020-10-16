@@ -103,7 +103,6 @@ app.get('/about', breadcrumb(), (req, res)=> {
 //add email
 app.post('/send-email', (req, res) => {
     console.log(req.body)
-    res.send(req.body)
 
     const output = `
         <p>You have a new contact request</p>
@@ -111,6 +110,7 @@ app.post('/send-email', (req, res) => {
         <ul>
             <li>Name: ${req.body.firstname} ${req.body.lastname}</li>
             <li>date: ${req.body.date}</li>
+            <li>Phone Number: ${req.body.phone}</li>
             <li>Location: ${req.body.location}</li>
             <li>Email: ${req.body.email}</li>
             <li>Event Type: ${req.body.partytype}</li>
@@ -144,8 +144,16 @@ app.post('/send-email', (req, res) => {
           return console.log(err)
       }
       console.log('message sent', info.messageId)
-      res.redirect('/')
+      res.render('./inquiry.hbs', {
+          body: req.body
+      })
   })
+})
+
+app.get('/inquiry', (req, res) => {
+    res.render('./inquiry.hbs', {
+
+    })
 })
 
 const port = process.env.PORT || 3000;
