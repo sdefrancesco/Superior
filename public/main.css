@@ -11,6 +11,10 @@ body {
   fill: #FFC400;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 .inquiry h1 {
   font-size: 2rem;
 }
